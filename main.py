@@ -8,7 +8,8 @@ def main():
     # numberSum.threeNumberSum()
     # passwordPhilosophy.checkPasswordPolicy()
     # passwordPhilosophy.checkPasswordPolicyPosition()
-    tobogganTrajectory.checkTrees()
+    tobogganTrajectory.checkSlope(3,1)
+    # tobogganTrajectory.checkVariousSlopes()
     print("!")
 
 
