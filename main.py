@@ -2,6 +2,7 @@ import numberSum
 import passwordPhilosophy
 import tobogganTrajectory
 import passportProcessing
+import binaryBoarding
 
 
 def main():
@@ -14,8 +15,8 @@ def main():
     # tobogganTrajectory.checkVariousSlopes()
     # passportProcessing.countPassportsWithFields()
     # passportProcessing.countValidPassports()
-
-    passportProcessing.countValidPassports()
+    # passportProcessing.countValidPassports()
+    binaryBoarding.findSeat()
     print("!")
 
 
