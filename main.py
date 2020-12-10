@@ -4,6 +4,7 @@ import tobogganTrajectory
 import passportProcessing
 import binaryBoarding
 import customCustoms
+import time
 
 
 def main():
@@ -19,8 +20,17 @@ def main():
     # passportProcessing.countValidPassports()
     # binaryBoarding.findSeat()
     # customCustoms.customsMinimumOneVote()
+
+    start_time = time.time()
     customCustoms.customsMinimumOneVote()
+    execTime = (time.time() - start_time) * 1000
+    print("Part 1: %.5s ms\n" % execTime)
+
+    start_time = time.time()
     customCustoms.customsAllVoted()
+    execTime = (time.time() - start_time) * 1000
+    print("Part 2: %.5s ms\n" % execTime)
+
     print("!")
 
 
