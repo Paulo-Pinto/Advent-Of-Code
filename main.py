@@ -3,6 +3,7 @@ import passwordPhilosophy
 import tobogganTrajectory
 import passportProcessing
 import binaryBoarding
+import customCustoms
 
 
 def main():
@@ -16,7 +17,10 @@ def main():
     # passportProcessing.countPassportsWithFields()
     # passportProcessing.countValidPassports()
     # passportProcessing.countValidPassports()
-    binaryBoarding.findSeat()
+    # binaryBoarding.findSeat()
+    # customCustoms.customsMinimumOneVote()
+    customCustoms.customsMinimumOneVote()
+    customCustoms.customsAllVoted()
     print("!")
 
 
