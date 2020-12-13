@@ -7,6 +7,7 @@ import passportProcessing
 import binaryBoarding
 import customCustoms
 import handyHaversacks
+import handheldHalting
 
 
 def main():
@@ -33,11 +34,20 @@ def main():
     # execTime = (time.time() - start_time) * 1000
     # print("Part 2: %.5s ms\n" % execTime)
 
+    # start_time = time.time()
+    # handyHaversacks.countBags()
+    # execTime = (time.time() - start_time) * 1000
+    # print("Part 1: %.5s ms\n" % execTime)
+
     start_time = time.time()
-    handyHaversacks.countBags()
+    print(handheldHalting.getAccumulated())
     execTime = (time.time() - start_time) * 1000
     print("Part 1: %.5s ms\n" % execTime)
 
+    start_time = time.time()
+    print(handheldHalting.changeCommands())
+    execTime = (time.time() - start_time) * 1000
+    print("Part 1: %.5s ms\n" % execTime)
 
     print("!")
 
