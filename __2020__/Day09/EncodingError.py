@@ -5,7 +5,7 @@ import __2020__.functions.funs as funs
 
 
 def part1(preamble):
-    with open('xmasEncoding') as fp:
+    with open('input') as fp:
         res = list(map(int, (x.strip() for x in fp.readlines())))
 
     for i in range(0, len(res) - preamble + 1):
@@ -25,7 +25,7 @@ def part1(preamble):
 
 
 def part2(preamble):
-    with open('xmasEncoding') as fp:
+    with open('input') as fp:
         res = list(map(int, (x.strip() for x in fp.readlines())))
 
     backupRes = res
@@ -89,4 +89,4 @@ def part2(preamble):
 funs.executionTime(1, part1, 25)
 funs.executionTime(2, part2, 25)
 
-print(funs.fileToList("xmasEncoding", ""))
+print(funs.fileToList("input", ""))

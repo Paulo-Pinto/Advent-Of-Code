@@ -1,10 +1,10 @@
 from collections import Counter
 
 
-# WARNING: customsAnswers.txt MUST have 2 empty lines at the end
+# WARNING: file MUST have 2 empty lines at the end
 
 def customsMinimumOneVote():
-    fl = open("customsAnswers.txt", "r").readlines()
+    fl = open("input", "r").readlines()
 
     answered = 0
     answer = ""
@@ -22,7 +22,7 @@ def customsMinimumOneVote():
 
 
 def customsAllVoted():
-    fl = open("customsAnswers.txt", "r").readlines()
+    fl = open("input", "r").readlines()
 
     ctrPpl = 0
     answered = 0

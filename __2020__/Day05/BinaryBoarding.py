@@ -3,7 +3,7 @@ occupiedSeats = list()  # used to calculate the biggest seatId
 
 
 def findSeat():
-    fl = open("seats.txt", "r").read().split()
+    fl = open("input", "r").read().split()
 
     for line in fl: #skim every line for seats
         countSeat(line) # analyse the seat

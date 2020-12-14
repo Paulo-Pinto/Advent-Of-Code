@@ -1,5 +1,5 @@
 def readFile():
-    fl = open("ConsoleInstructions.txt", "r").readlines()  # open file
+    fl = open("input", "r").readlines()  # open file
 
     commands = dict(list())  # dictionary of lists, the list will contain commands
     i = 1

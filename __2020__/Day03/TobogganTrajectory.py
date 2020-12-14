@@ -1,5 +1,5 @@
 def checkSlope(x, y):  # x = right, y = down
-    fl = open("trees.txt", "r").readlines()  # open file & read lines
+    fl = open("input", "r").readlines()  # open file & read lines
 
     lines = (len([x.split(' ')[0] for x in fl]))  # count how many times you can split end of lines
     columns = len(fl[1]) - 1
