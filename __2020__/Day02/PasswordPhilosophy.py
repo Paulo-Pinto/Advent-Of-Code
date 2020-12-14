@@ -1,7 +1,7 @@
 def checkPasswordPolicy():
     counter = 0  # initialize counter
 
-    fl = open("files/passwords.txt", "r").readlines()  # open file
+    fl = open("passwords.txt", "r").readlines()  # open file
 
     for line in fl:
         split = line.split()  # split the values form the text
@@ -27,7 +27,7 @@ def checkPasswordPolicy():
 def checkPasswordPolicyPosition():
     counter = 0  # initialize counter
 
-    fl = open("files/passwords.txt", "r").readlines()  # open file
+    fl = open("passwords.txt", "r").readlines()  # open file
 
     for line in fl:
         split = line.split()  # split the values form the text

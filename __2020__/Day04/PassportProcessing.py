@@ -9,7 +9,7 @@ fieldsNoCID = "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"
 def countValidPassports():
     ctrCods = 0
     ctrValid = 0
-    fl = open("files/passports.txt").read()
+    fl = open("passports.txt").read()
 
     fieldsLidos = re.findall(r'\S+|\n', fl)
 
@@ -117,7 +117,7 @@ def checkPid(val):
 def countPassportsWithFields():
     counter = 0
 
-    fl = open("files/passports.txt").read().splitlines()
+    fl = open("passports.txt").read().splitlines()
 
     string = ""
     for line in fl:

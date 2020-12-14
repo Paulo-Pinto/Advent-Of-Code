@@ -1,6 +1,10 @@
+import __2020__.functions.funs as funs
+import time
+
+
 def twoNumberSum():
     # open file & read lines
-    fl = open("files/numbers.txt", "r").readlines()
+    fl = open("input", "r").readlines()
 
     for x in fl:
         for y in fl:  # iterate all numbers by themselves
@@ -13,7 +17,7 @@ def twoNumberSum():
 
 def twoNumberSumOneFor():
     # open file
-    f = open("files/numbers.txt", "r")
+    f = open("input", "r")
 
     # file lines
     fl = f.readlines()
@@ -28,7 +32,7 @@ def twoNumberSumOneFor():
 
 def threeNumberSum():
     # open file
-    f = open("files/numbers.txt", "r")
+    f = open("input", "r")
 
     # file lines
     fl = f.readlines()
@@ -40,3 +44,7 @@ def threeNumberSum():
                     print(x, y, z)
                     print(int(x) * int(y) * int(z))
                     exit()  # exits when spotted
+
+
+funs.executionTime(1, twoNumberSum)
+# funs.executionTime(2, twoNumberSumOneFor, 25)

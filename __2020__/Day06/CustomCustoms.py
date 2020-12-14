@@ -4,7 +4,7 @@ from collections import Counter
 # WARNING: customsAnswers.txt MUST have 2 empty lines at the end
 
 def customsMinimumOneVote():
-    fl = open("files/customsAnswers.txt", "r").readlines()
+    fl = open("customsAnswers.txt", "r").readlines()
 
     answered = 0
     answer = ""
@@ -22,7 +22,7 @@ def customsMinimumOneVote():
 
 
 def customsAllVoted():
-    fl = open("files/customsAnswers.txt", "r").readlines()
+    fl = open("customsAnswers.txt", "r").readlines()
 
     ctrPpl = 0
     answered = 0

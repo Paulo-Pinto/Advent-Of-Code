@@ -20,7 +20,7 @@ bags = dict()  # global dictionary that keeps the bags that can contain other ba
 
 
 def countBags():
-    fl = open("files/bags.txt", "r").readlines()  # open file
+    fl = open("bags.txt", "r").readlines()  # open file
 
     for line in fl:
 
