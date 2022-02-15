@@ -13,7 +13,42 @@ def read_file_2d(file):
         return np.array([x.replace("\n", "") for x in f.readlines()])
 
 
-def get_basins_2d(data):
+def calc_risk_level(data):
+    risk_level_sum = 0
+
+    # iterate rows
+    for x in range(len(data)):
+        # iterate cols
+        for y in range(len(data[0])):
+            cell = int(data[x][y])
+
+            # check cell above
+            if x - 1 >= 0:
+                if int(data[x - 1][y]) <= cell:
+                    continue
+
+            # check cell below
+            if x + 1 < len(data):
+                if int(data[x + 1][y]) <= cell:
+                    continue
+
+            # check left cell
+            if y - 1 >= 0:
+                if int(data[x][y - 1]) <= cell:
+                    continue
+
+            # check right cell
+            if y + 1 < len(data[0]):
+                if int(data[x][y + 1]) <= cell:
+                    continue
+
+            # height + 1
+            risk_level_sum += 1 + int(cell)
+    return risk_level_sum
+
+
+# iterates all cells, solving their basin size
+def calc_basin_sizes(data):
     # store analysed cells
     seen = []
     # store size of basins
@@ -26,7 +61,7 @@ def get_basins_2d(data):
             if int(data[x][y]) != 9 and (x, y) not in seen:
                 # print(x,y,data[x][y])
                 seen.append((x, y))
-                size, seen = basin_size_2d(data, x, y, seen, 1)
+                size, seen = explore_basin(data, x, y, seen, 1)
                 sizes.append(size)
 
     # sort in ascending order
@@ -39,14 +74,14 @@ def get_basins_2d(data):
 
 # recursive, searches adjacent cells
 # returns the current size of the basin (incrementally) and the analysed cells [seen]
-def basin_size_2d(data, x, y, seen, size):
+def explore_basin(data, x, y, seen, size):
     # check cell above
     if x - 1 >= 0:
         x -= 1
         if int(data[x][y]) != 9 and (x, y) not in seen:
             # print(f"top {data[x][y]} | {(x, y)}")
             seen.append((x, y))
-            size, seen = basin_size_2d(data, x, y, seen, size + 1)
+            size, seen = explore_basin(data, x, y, seen, size + 1)
         x += 1
 
     # check cell below
@@ -55,7 +90,7 @@ def basin_size_2d(data, x, y, seen, size):
         if int(data[x][y]) != 9 and (x, y) not in seen:
             # print(f"bot {data[x][y]} | {(x, y)}")
             seen.append((x, y))
-            size, seen = basin_size_2d(data, x, y, seen, size + 1)
+            size, seen = explore_basin(data, x, y, seen, size + 1)
         x -= 1
 
     # check right cell
@@ -64,7 +99,7 @@ def basin_size_2d(data, x, y, seen, size):
         if int(data[x][y]) != 9 and (x, y) not in seen:
             # print(f"right {data[x][y]} | {(x, y)}")
             seen.append((x, y))
-            size, seen = basin_size_2d(data, x, y, seen, size + 1)
+            size, seen = explore_basin(data, x, y, seen, size + 1)
         y -= 1
 
     # check left cell
@@ -73,12 +108,18 @@ def basin_size_2d(data, x, y, seen, size):
         if int(data[x][y]) != 9 and (x, y) not in seen:
             # print(f"left {data[x][y]} | {(x, y)}")
             seen.append((x, y))
-            size, seen = basin_size_2d(data, x, y, seen, size + 1)
+            size, seen = explore_basin(data, x, y, seen, size + 1)
         y += 1
 
     # print(f"end {data[x][y]}")
     return size, seen
 
 
-result = get_basins_2d(read_file_2d("input_9"))
+print(calc_risk_level(read_file_2d("input_9")))
+
+result = calc_basin_sizes(read_file_2d("input_9"))
 print(np.prod(result), result)
+
+# I could probably have used a map of the low points from part 1
+# to make part 2 easier but I solved part 1 first with a 1d array,
+# so thought didn't come intuitively
