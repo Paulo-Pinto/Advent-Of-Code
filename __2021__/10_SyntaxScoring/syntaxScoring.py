@@ -39,7 +39,7 @@ def part_1():
 
             if e in [")", "]", "}", ">"]:
                 if closers[e] == last_open[len(last_open) - 1]:  # check if closer matches last opener
-                    last_open = last_open[:-1]  # remove last opener
+                    last_open.pop()  # remove last opener
                 else:  # add points and go to next row
                     # print(f"{ctr} : expected {openers[last_open[len(last_open) - 1]]}, but found {e} instead\n")
                     total += closers_points[e]
@@ -60,7 +60,7 @@ def part_2():
 
             if e in [")", "]", "}", ">"]:  # is it a closer?
                 if closers[e] == last_open[len(last_open) - 1]:  # check if closer matches last opener
-                    last_open = last_open[:-1]  # remove last opener
+                    last_open.pop()  # remove last opener
                 else:
                     break  # corrupted, go to next row
 
