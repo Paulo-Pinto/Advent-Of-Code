@@ -110,3 +110,5 @@ print(dfs2(nodes["start"], []))
 # print(timeit.timeit('''
 # print(dfs2(nodes["start"], []))
 # ''', number=10, setup="from __main__ import dfs2, nodes,read_and_reset_vars"))
+
+# this one took me a while... recursion was twisting my brain for a whole hour
