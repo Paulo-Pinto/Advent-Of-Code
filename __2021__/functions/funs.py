@@ -1,11 +1,11 @@
 import time
 
 
-def executionTime(part, func, *args):
+def executionTime(func, *args):
     start_time = time.time()
     print(func(*args))
     execTime = (time.time() - start_time) * 1000
-    print("Part " + str(part) + ": %.5s ms\n" % execTime)
+    print("Execution time: %.5s ms\n" % execTime)
 
 
 def fileToList(fileName, *divider):
