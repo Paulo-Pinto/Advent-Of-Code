@@ -1,4 +1,4 @@
-import __2020__.functions.funs as funs
+# import functions.funs as funs
 import time
 
 
@@ -13,7 +13,6 @@ def twoNumberSum():
                 # print(x, y)
                 print(int(x) * int(y))
                 return
-
 
 def twoNumberSumOneFor():
     # open file
@@ -45,6 +44,7 @@ def threeNumberSum():
                     print(int(x) * int(y) * int(z))
                     exit()  # exits when spotted
 
+twoNumberSum()
 
-funs.executionTime(1, twoNumberSum)
+# funs.executionTime(1, twoNumberSum)
 # funs.executionTime(2, twoNumberSumOneFor, 25)
