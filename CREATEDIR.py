@@ -7,7 +7,7 @@ def create_notebook_cell(title):
     nb = nbf.v4.new_notebook()
 
     code = '''\
-def pt_1(type="test"):
+def read_file(type="test"):
     with open(type) as fp:
         for line in fp.readlines():
             
@@ -15,9 +15,8 @@ def pt_1(type="test"):
                 .strip("\\n")\\
                 .split(" ")
 
-            print(x)
-pt_1()
-'''
+            return x
+read_file()'''
     nb['cells'].append(nbf.v4.new_code_cell(code))
     nbf.write(nb, title)
 
