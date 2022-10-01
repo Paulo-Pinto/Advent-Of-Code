@@ -5,8 +5,8 @@ occupiedSeats = list()  # used to calculate the biggest seatId
 def findSeat():
     fl = open("input", "r").read().split()
 
-    for line in fl: #skim every line for seats
-        countSeat(line) # analyse the seat
+    for line in fl:  # skim every line for seats
+        countSeat(line)  # analyse the seat
 
     print("Biggest Value is " + str(max(occupiedSeats)))
     print("Our seat is " + str(availableSeats[0]))
