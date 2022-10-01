@@ -1,5 +1,5 @@
 def part_one():
-    f = open('input_1')
+    f = open("input_1")
 
     prev, ctr = 0, 0
 
@@ -19,8 +19,8 @@ def part_one():
 
 
 def part_two():
-    with open('input_1') as f:
-        data = [int(line.rstrip('\n')) for line in f]
+    with open("input_1") as f:
+        data = [int(line.rstrip("\n")) for line in f]
 
     ctr = 0
 

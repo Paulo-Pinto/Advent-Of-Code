@@ -1,6 +1,6 @@
 import numpy as np
 
-with open('input_5') as f:
+with open("input_5") as f:
     data_hydro = [(line.rstrip("\n").split(" -> ")) for line in f]
 
 
@@ -33,17 +33,17 @@ def hydro(data_hydro, part="one"):
                         else:
                             y = y1 - i
 
-                        line_map[x, y] += 1;
+                        line_map[x, y] += 1
 
         # vertical, y moves
         if x1 == x2:
             for i in range(min(y1, y2), max(y1, y2) + 1):
-                line_map[x1, i] += 1;
+                line_map[x1, i] += 1
 
         # horizontal, x moves
         if y1 == y2:
             for i in range(min(x1, x2), max(x1, x2) + 1):
-                line_map[i, y1] += 1;
+                line_map[i, y1] += 1
 
     counter = np.unique(line_map, return_counts=True)
 

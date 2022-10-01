@@ -1,7 +1,9 @@
 def checkSlope(x, y):  # x = right, y = down
     fl = open("input", "r").readlines()  # open file & read lines
 
-    lines = (len([x.split(' ')[0] for x in fl]))  # count how many times you can split end of lines
+    lines = len(
+        [x.split(" ")[0] for x in fl]
+    )  # count how many times you can split end of lines
     columns = len(fl[1]) - 1
 
     # print("lines: ", lines, " columns:", columns)
@@ -21,7 +23,7 @@ def checkSlope(x, y):  # x = right, y = down
 
         # print("i =", i, " (", y, ") (", x, ")")
         # print(fl[y][x])
-        if fl[y][x] == '#':  # if it's a tree, count it!
+        if fl[y][x] == "#":  # if it's a tree, count it!
             # print("i =", i, " (", y, ") (", x, ")", fl[y][x])  # display the current
             counter += 1
 
@@ -29,7 +31,9 @@ def checkSlope(x, y):  # x = right, y = down
         x += incX
         y += incY
 
-        if x >= columns:  # if we've reached the end of the line, we must overload the extra value to the other side
+        if (
+            x >= columns
+        ):  # if we've reached the end of the line, we must overload the extra value to the other side
             x -= columns
 
         if y >= lines:  # if we've reached the end of the file

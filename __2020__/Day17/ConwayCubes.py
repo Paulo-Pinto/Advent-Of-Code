@@ -1,5 +1,4 @@
 class Point:
-
     def __init__(self, px, py, pz, val):
         self.px = px
         self.py = py
@@ -15,13 +14,22 @@ class Point:
         return chave(self.val)
 
     def __full__(self):
-        return "[" + chave(self.px) + " , " + chave(self.py) + " , " + chave(self.pz) + "] " + chave(self.val)
+        return (
+            "["
+            + chave(self.px)
+            + " , "
+            + chave(self.py)
+            + " , "
+            + chave(self.pz)
+            + "] "
+            + chave(self.val)
+        )
 
 
 bags = dict()  # global dictionary that keeps the bags that can contain other bags
 
 length = 3
-with open('input') as fp:
+with open("input") as fp:
     res = list(char for char in fp.read().strip("\n"))
     print(res)
 

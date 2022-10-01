@@ -31,8 +31,12 @@ def part2():
             command[0] = "nop"
             result = runCommands(commands)
             if result[2] == 1:  # the console finished booting up
-                return "Change jmp to nop in position " + str(command[2]) + \
-                       " to boot the console correctly and get the accumulated value of " + str(result[0])
+                return (
+                    "Change jmp to nop in position "
+                    + str(command[2])
+                    + " to boot the console correctly and get the accumulated value of "
+                    + str(result[0])
+                )
 
             command[0] = "jmp"  # revert the switch for a clean slate
 
@@ -40,8 +44,12 @@ def part2():
             command[0] = "jmp"
             result = runCommands(commands)
             if result[2] == 1:  # the console finished booting up
-                return "Change nop to jmp in position " + str(command[2]) + \
-                       " to boot the console correctly and get the accumulated value of " + str(result[0])
+                return (
+                    "Change nop to jmp in position "
+                    + str(command[2])
+                    + " to boot the console correctly and get the accumulated value of "
+                    + str(result[0])
+                )
 
             command[0] = "nop"  # revert the switch for a clean slate
 

@@ -2,7 +2,7 @@ import numpy as np
 
 
 def read_lanternfish():
-    with open('input_6') as f:
+    with open("input_6") as f:
         return [line.split(",") for line in f][0]
 
 

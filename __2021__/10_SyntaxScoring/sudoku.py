@@ -11,7 +11,9 @@ def solve_single_check(board):
         for c in range(9):
             if board[r][c] == ".":
                 for guess in range(1, 10):
-                    if check_position(board, r, c, str(guess)):  # if it returns true, continue on that path
+                    if check_position(
+                        board, r, c, str(guess)
+                    ):  # if it returns true, continue on that path
                         board[r][c] = str(guess)
                         solve_single_check(board)
                         board[r][c] = "."

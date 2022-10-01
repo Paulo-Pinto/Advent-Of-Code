@@ -14,6 +14,7 @@ def twoNumberSum():
                 print(int(x) * int(y))
                 return
 
+
 def twoNumberSumOneFor():
     # open file
     f = open("input", "r")
@@ -43,6 +44,7 @@ def threeNumberSum():
                     print(x, y, z)
                     print(int(x) * int(y) * int(z))
                     exit()  # exits when spotted
+
 
 twoNumberSum()
 

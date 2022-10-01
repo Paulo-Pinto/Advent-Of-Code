@@ -1,5 +1,5 @@
 def read_bingo_input():
-    with open('input_4') as f:
+    with open("input_4") as f:
         data_bingo = [(line.rstrip("\n").split()) for line in f]
 
     # clean data

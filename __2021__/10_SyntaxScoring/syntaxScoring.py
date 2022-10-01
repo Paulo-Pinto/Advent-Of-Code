@@ -1,21 +1,11 @@
 def read_file():
-    with open('input_10') as f:
+    with open("input_10") as f:
         return list([line.strip("\n") for line in f])
 
 
-closers = {
-    ")": "(",
-    "]": "[",
-    "}": "{",
-    ">": "<"
-}
+closers = {")": "(", "]": "[", "}": "{", ">": "<"}
 
-closers_points = {
-    ")": 3,
-    "]": 57,
-    "}": 1197,
-    ">": 25137
-}
+closers_points = {")": 3, "]": 57, "}": 1197, ">": 25137}
 
 # openers is closers reversed
 openers = {}
@@ -23,12 +13,8 @@ openers = {}
 for k, v in closers.items():
     openers[v] = k
 
-openers_points = {
-    "(": 1,
-    "[": 2,
-    "{": 3,
-    "<": 4
-}
+openers_points = {"(": 1, "[": 2, "{": 3, "<": 4}
+
 
 def part_1():
     total = 0
@@ -38,7 +24,9 @@ def part_1():
         for e in row:  # is it an closer?
 
             if e in [")", "]", "}", ">"]:
-                if closers[e] == last_open[len(last_open) - 1]:  # check if closer matches last opener
+                if (
+                    closers[e] == last_open[len(last_open) - 1]
+                ):  # check if closer matches last opener
                     last_open.pop()  # remove last opener
                 else:  # add points and go to next row
                     # print(f"{ctr} : expected {openers[last_open[len(last_open) - 1]]}, but found {e} instead\n")
@@ -59,7 +47,9 @@ def part_2():
         for index, e in enumerate(row):
 
             if e in [")", "]", "}", ">"]:  # is it a closer?
-                if closers[e] == last_open[len(last_open) - 1]:  # check if closer matches last opener
+                if (
+                    closers[e] == last_open[len(last_open) - 1]
+                ):  # check if closer matches last opener
                     last_open.pop()  # remove last opener
                 else:
                     break  # corrupted, go to next row
@@ -75,7 +65,9 @@ def part_2():
                 scores.append(score)
 
     scores = sorted(scores)
-    return scores[round((len(scores) + 1) / 2) - 1]  # alternatively statistics.median(len(scores))
+    return scores[
+        round((len(scores) + 1) / 2) - 1
+    ]  # alternatively statistics.median(len(scores))
 
 
 print(part_1())

@@ -20,7 +20,9 @@ def check_simultaneous_flash():
 
     # rows
     for r in octopi:
-        if len(set(r)) != 1:  # if the length of the set is 1, all the numbers are the same (set has no duplicates)
+        if (
+            len(set(r)) != 1
+        ):  # if the length of the set is 1, all the numbers are the same (set has no duplicates)
             return False
 
     # cols

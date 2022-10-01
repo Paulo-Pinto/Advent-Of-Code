@@ -1,5 +1,5 @@
 def read_file():
-    with open('input_2') as f:
+    with open("input_2") as f:
         return [line.rstrip("\n").split(" ") for line in f]
 
 

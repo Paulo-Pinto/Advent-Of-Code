@@ -11,7 +11,7 @@ def countValidPassports():
     ctrValid = 0
     fl = open("input").read()
 
-    fieldsLidos = re.findall(r'\S+|\n', fl)
+    fieldsLidos = re.findall(r"\S+|\n", fl)
 
     string = ""
     for i in range(0, len(fieldsLidos) - 1):
@@ -128,7 +128,9 @@ def countPassportsWithFields():
                 counter += 1
             string = ""
 
-    if checkPassport(string):  # check last password, since there isn't a new line at the end of the file
+    if checkPassport(
+        string
+    ):  # check last password, since there isn't a new line at the end of the file
         counter += 1
 
     print(counter)

@@ -1,5 +1,4 @@
 class Bag:
-
     def __init__(self, colourType, colour):
         self.bagsThatAllow = set()
         self.quant = 0
@@ -40,15 +39,19 @@ def countBags():
                     bagContained = bagContained.replace("bag", "")[:-1]
 
                 if bagContained not in bags:  # alter global dictionary
-                    bags[bagContained] = list()  # create list to keep the bags that this bag can contain
+                    bags[
+                        bagContained
+                    ] = list()  # create list to keep the bags that this bag can contain
 
                 # bag.setQuant(bag.quant + bagContained[-2:])
                 bags[bagContained].append(bag)  # add to list
 
     uniqueList = set()  # create set to keep the number of bags that can contain yourBag
-    yourBag = 'shiny gold'
+    yourBag = "shiny gold"
     bagsQuant = recursivaCountBags([yourBag], uniqueList)
-    print("Your bag can be contained in " + str(bagsQuant) + " bags")  # quantity of bags that can contain yours
+    print(
+        "Your bag can be contained in " + str(bagsQuant) + " bags"
+    )  # quantity of bags that can contain yours
 
 
 def recursiva(parents: list, uniqueList):

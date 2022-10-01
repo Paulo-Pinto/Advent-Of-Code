@@ -2,7 +2,7 @@ import numpy as np
 
 
 def read_crabs():
-    with open('input_7') as f:
+    with open("input_7") as f:
         return list(map(int, [line.split(",") for line in f][0]))
 
 

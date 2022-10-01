@@ -5,15 +5,19 @@ import __2020__.functions.funs as funs
 
 
 def part1(preamble):
-    with open('input') as fp:
+    with open("input") as fp:
         res = list(map(int, (x.strip() for x in fp.readlines())))
 
     for i in range(0, len(res) - preamble + 1):
         found = 0
         resUsable = res[0:preamble]  # first <preamble> elements of res list
 
-        for numbers in combinations(resUsable, 2):  # iterate every combination of 2 elements from resUsable
-            if sum(numbers) == res[preamble]:  # check the sum of our combination against the number we need
+        for numbers in combinations(
+            resUsable, 2
+        ):  # iterate every combination of 2 elements from resUsable
+            if (
+                sum(numbers) == res[preamble]
+            ):  # check the sum of our combination against the number we need
                 found = 1  # we've found a sum
                 res = res[1:]  # go forward one index
                 break
@@ -25,7 +29,7 @@ def part1(preamble):
 
 
 def part2(preamble):
-    with open('input') as fp:
+    with open("input") as fp:
         res = list(map(int, (x.strip() for x in fp.readlines())))
 
     backupRes = res
@@ -36,8 +40,12 @@ def part2(preamble):
         found = 0
         resUsable = res[0:preamble]  # first <preamble> elements of res list
 
-        for numbers in combinations(resUsable, 2):  # iterate every combination of 2 elements from resUsable
-            if sum(numbers) == res[preamble]:  # check the sum of our combination against the number we need
+        for numbers in combinations(
+            resUsable, 2
+        ):  # iterate every combination of 2 elements from resUsable
+            if (
+                sum(numbers) == res[preamble]
+            ):  # check the sum of our combination against the number we need
                 found = 1  # we've found a sum
                 res = res[1:]  # go forward one index
                 break
@@ -50,7 +58,9 @@ def part2(preamble):
 
     index = backupRes.index(numberToFind)
     found = 0
-    numberList = list()  # list where we will keep our numbers that add up to the number we want to find
+    numberList = (
+        list()
+    )  # list where we will keep our numbers that add up to the number we want to find
     e = index
     soma = 0
 

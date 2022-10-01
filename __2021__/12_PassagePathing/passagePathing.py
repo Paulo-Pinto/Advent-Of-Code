@@ -6,7 +6,7 @@ class Node:
     def __init__(self, val):
         self.val = val
         self.next = []  # list of next possible nodes
-        self.big = (val.upper() == val)  # big caves are represented by uppercase
+        self.big = val.upper() == val  # big caves are represented by uppercase
 
     def __str__(self):
         return f"\n{self.val} -> {self.next}"

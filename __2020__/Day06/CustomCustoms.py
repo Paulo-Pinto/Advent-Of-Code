@@ -3,6 +3,7 @@ from collections import Counter
 
 # WARNING: file MUST have 2 empty lines at the end
 
+
 def customsMinimumOneVote():
     fl = open("input", "r").readlines()
 
@@ -10,7 +11,7 @@ def customsMinimumOneVote():
     answer = ""
 
     for line in fl:
-        if line == "\n" or line == '':
+        if line == "\n" or line == "":
             res = Counter(answer)  # get frequency of characters in our string
             # transform freq into list of all unique characters in the answer
             res = list(res)
@@ -29,7 +30,7 @@ def customsAllVoted():
     answer = ""
 
     for line in fl:
-        if line == "\n" or line == '':  # new line
+        if line == "\n" or line == "":  # new line
             charsFrequencyList = list(answer)  # create a list from the answer string
             charsFrequency = dict()  # create dictionary
 
@@ -41,12 +42,16 @@ def customsAllVoted():
 
             for key in charsFrequency:  # check dictionary for answers that don't count
                 value = charsFrequency[key]
-                if value != ctrPpl:  # if the letter's frequency is different from the number of people in the group
+                if (
+                    value != ctrPpl
+                ):  # if the letter's frequency is different from the number of people in the group
                     charsFrequency[key] = 0
 
             for key in charsFrequency:  # remove said answers
                 value = charsFrequency[key]
-                if value != 0:  # if the key has a value different from 0, increment the total answers by 1
+                if (
+                    value != 0
+                ):  # if the key has a value different from 0, increment the total answers by 1
                     # print(key, value)
                     answered += 1
 
