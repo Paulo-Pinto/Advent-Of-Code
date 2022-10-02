@@ -7,13 +7,11 @@ def create_notebook_cell(title):
     nb = nbf.v4.new_notebook()
 
     code = '''\
-def read_file(type="test"):
-    with open(type) as fp:
+def read_file(filename="test"):
+    with open(filename) as fp:
         for line in fp.readlines():
             
-            x = line\\
-                .strip("\\n")\\
-                .split(" ")
+            x = line.strip().split(" ")
 
             return x
 read_file()'''
